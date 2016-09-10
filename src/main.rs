@@ -10,16 +10,11 @@ fn main(){
 
 fn lfsr(){
     // Create the 7-bit-register
-    let mut register = [false; 7];
+    let mut register = [0; 7];
 
     // Initialize it with true of false
     for (i,j) in register.iter_mut().enumerate() {
-        let val = rand::thread_rng().gen_range(0, 2);
-        match val {
-            0 => *j = false,
-            1 => *j = true,
-            _ => panic!("Unvalid value generated: {}", val),
-        }
+        *j = rand::thread_rng().gen_range(0, 2);
     };
     println!("Register: {:?}", register);
 
