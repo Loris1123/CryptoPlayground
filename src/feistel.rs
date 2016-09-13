@@ -15,7 +15,7 @@ pub fn encrypt(){
         let result = round_function(&left, &right);
         left = result.0;
         right = result.1;
-        
+
         println!("");
     }
     println!("Final:", );
@@ -27,12 +27,28 @@ pub fn encrypt(){
 /// Round function for feistel structure.
 fn round_function(left: &[u8; 8], right: &[u8; 8]) -> ([u8;8],[u8;8]){
     let mut tmp = [0u8; 8];   // Will be result of XOR. So becoming the new right
+    let crypt_right = crypto_function(right);
     for i in 0..8 {
         // XOR each byte
-        tmp[i] = left[i] ^ right[1];
+        tmp[i] = left[i] ^ crypt_right[1];
     }
     println!("{:?}", tmp );
 
     (right.clone(),tmp)
+
+}
+
+// "Encrypts" the given data byte by XOR with the key.
+fn crypto_function(data: &[u8]) -> [u8; 8]{
+    //println!("CryptoFunction");
+    //println!("Data: {:?}", data);
+    let key = [54u8, 128u8, 37u8, 219u8, 44u8, 51u8, 116u8, 197u8];
+    let mut result = [0u8; 8];
+
+    for i in 0..8 {
+        result[i] = key[i] ^ data[i];
+    }
+    //println!("Enc: {:?}", result);
+    result
 
 }

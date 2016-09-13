@@ -5,3 +5,12 @@ where I will implement some things I heard during the lecture.
 It's probably not useful to anybody.
 
 I've chosen Rust as a language for no deep reason. I just want to learn the language.
+
+
+## How to use
+
+    Specify what you want to do by choosing one of the followng arguments
+    The following arguments are available
+    --help	Print this helptext
+    --lfsr	Start the Linear-Feedback-Shift-Register
+    --feistel	Start the Feistelcrypt
