@@ -1,6 +1,6 @@
 [package]
 
-name = "cargo_playground"
+name = "crypto_playground"
 version = "0.0.1"
 authors = ["Loris1123 <https://github.com/Loris1123/>"]
 
