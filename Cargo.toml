@@ -6,3 +6,4 @@ authors = ["Loris1123 <https://github.com/Loris1123/>"]
 
 [dependencies]
 rand = "*"
+getopts = "*"
