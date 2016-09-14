@@ -15,7 +15,7 @@ fn main(){
     for arg in &args[1..]{
         // Skip the first argument, because it is the name of the binary.
         match arg.as_ref() {
-            "--lfsr" => lfsr::lfsr(),
+            "--lfsr" => lfsr::lfsr(12),
             "--feistel" => feistel::encrypt(),
             "--help" => print_helptext(),
             _ => print_helptext(),
