@@ -32,6 +32,6 @@ fn main(){
         lfsr::lfsr(15);
     }
     if matches.opt_present("gcd"){
-        gcd::calculate_gcd(146,12);
+        gcd::calculate_gcd(3220, 70);
     }
 }

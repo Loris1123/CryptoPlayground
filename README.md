@@ -14,8 +14,8 @@ Use the following arguments to choose what you want to do
         -h, --help          Print this helptext
             --feistel       Start Feistel encryption
             --lfsr          Start LFSR
+            --gcd           Calculate the greatest common divisor of two numbers
 
 ## Todo
- - GCD (Euklid)
  - Some Hashes
  - Maybe more.. Whatever comes to my mind
