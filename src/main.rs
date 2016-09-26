@@ -6,6 +6,7 @@ use getopts::Options;
 mod lfsr;
 mod feistel;
 mod gcd;
+mod hash;
 
 fn main(){
     println!("Welcome to CryptoPlayground");
@@ -15,6 +16,7 @@ fn main(){
     opts.optflag("h", "help", "Print this helptext");
     opts.optflag("", "feistel", "Start Feistel encryption");
     opts.optflag("", "lfsr", "Start LFSR");
+    opts.optflag("", "hash", "Create a hash");
     opts.optflag("", "gcd", "Calculate the greatest common divisor of two numbers");
 
     let matches = match opts.parse(&args[1..]){
@@ -33,5 +35,9 @@ fn main(){
     }
     if matches.opt_present("gcd"){
         gcd::calculate_gcd(3220, 70);
+    }
+    
+    if matches.opt_present("hash"){
+        hash::fnv1a(String::from("Foobar"));
     }
 }
